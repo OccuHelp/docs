@@ -80,6 +80,11 @@ const config: Config = {
           label: 'Docs',
         },
         {
+          href: 'https://OccuHelp.com',
+          label: 'Website',
+          position: 'right',
+        },
+        {
           href: 'https://app.occuhelp.com',
           label: 'Login',
           position: 'right',
