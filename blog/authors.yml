@@ -1,0 +1,120 @@
+# General Organization Author
+occuhelp:
+  name: OccuHelp
+  title: OccuHelp Team
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+# Executive Team (C-Suite)
+austin_steil:
+  name: Austin Steil
+  title: Systems Founder
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+michael_rodriguez:
+  name: Michael Rodriguez
+  title: Chief Operating Officer
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+jennifer_thompson:
+  name: Jennifer Thompson
+  title: Chief Financial Officer
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+# Business Administration Department
+david_martinez:
+  name: David Martinez
+  title: VP of Business Administration
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+emily_johnson:
+  name: Emily Johnson
+  title: Business Analyst
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+robert_williams:
+  name: Robert Williams
+  title: Administrative Coordinator
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+# Finance Department
+lisa_anderson:
+  name: Lisa Anderson
+  title: VP of Finance
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+james_taylor:
+  name: James Taylor
+  title: Senior Accountant
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+maria_garcia:
+  name: Maria Garcia
+  title: Financial Analyst
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+# Human Resources Department
+patricia_brown:
+  name: Patricia Brown
+  title: VP of Human Resources
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+kevin_davis:
+  name: Kevin Davis
+  title: HR Specialist
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+amanda_wilson:
+  name: Amanda Wilson
+  title: Talent Acquisition Manager
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+# Information Technology Department
+thomas_moore:
+  name: Thomas Moore
+  title: VP of Information Technology
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+rachel_jackson:
+  name: Rachel Jackson
+  title: Senior Software Engineer
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+daniel_white:
+  name: Daniel White
+  title: Systems Administrator
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+# Operations Department
+christopher_harris:
+  name: Christopher Harris
+  title: VP of Operations
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+nicole_martin:
+  name: Nicole Martin
+  title: Operations Manager
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png
+
+brian_thompson:
+  name: Brian Thompson
+  title: Process Improvement Specialist
+  url: https://occuhelp.com
+  image_url: https://github.com/occuhelp.png

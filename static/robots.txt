@@ -1,0 +1,16 @@
+# robots.txt for docs.occuhelp.com
+# Allow all crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://docs.occuhelp.com/sitemap.xml
+
+# Disallow crawling of non-content paths
+Disallow: /assets/
+Disallow: /search/
+
+# Crawl-delay for polite crawling (optional, respected by some bots)
+Crawl-delay: 1
+
