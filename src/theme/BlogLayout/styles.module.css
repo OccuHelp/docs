@@ -1,0 +1,47 @@
+.blogLayoutWrapper {
+  display: flex;
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  position: relative;
+}
+
+.sidebarColumn {
+  width: auto;
+  flex-shrink: 0;
+  padding: 2rem 1rem 2rem 2rem;
+  background: var(--ifm-background-color);
+}
+
+.mainColumn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.mainContent {
+  width: 100%;
+  max-width: 900px; /* Increased from default for better readability */
+}
+
+/* Responsive design */
+@media (max-width: 996px) {
+  .blogLayoutWrapper {
+    flex-direction: column;
+  }
+
+  .sidebarColumn {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  .mainColumn {
+    padding: 1rem;
+  }
+
+  .mainContent {
+    max-width: 100%;
+  }
+}
+

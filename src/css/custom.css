@@ -24,3 +24,35 @@
   --ifm-color-primary-lightest: #caf0f8;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Hide table of contents on blog posts */
+.theme-doc-toc-desktop {
+  display: none !important;
+}
+
+.theme-doc-toc-mobile {
+  display: none !important;
+}
+
+/* Also hide TOC in blog layout */
+.col.col--3 {
+  display: none !important;
+}
+
+/* Make blog post content full width when TOC is hidden */
+article.col--8,
+.col.col--9 {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+}
+
+/* Adjust blog post layout */
+.blog-wrapper .container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-wrapper .container .row > .col {
+  flex: 1;
+  max-width: 100%;
+}

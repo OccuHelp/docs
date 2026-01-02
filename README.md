@@ -1,41 +1,95 @@
-# Website
+# OccuHelp Documentation Static Site
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+The purpose of this website is to provide documentation for the OccuHelp system. It is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-## Installation
+Live site: <https://docs.occuhelp.com> deployed from the `main` branch on GitHub Pages using [`.github/workflows/deploy.yml`](https://github.com/OccuHelp/docs/blob/main/.github/workflows/deploy.yml)
 
-```bash
-yarn
-```
+## Commands
 
-## Local Development
+### `npm run docusaurus`
 
-```bash
-yarn start
-```
+**Purpose:** Runs the Docusaurus CLI directly for executing Docusaurus commands
+**Options:**
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+- `-- --help` - Display help information
+- `-- --version` - Display Docusaurus version
 
-## Build
+### `npm run start`
 
-```bash
-yarn build
-```
+**Purpose:** Starts a local development server with hot reloading at `http://localhost:3000`
+**Options:**
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+- `-- --port <port>` - Specify a custom port (default: 3000)
+- `-- --host <host>` - Specify a custom host (default: localhost)
+- `-- --hot-only` - Do not fallback to page refresh if hot reload fails
+- `-- --no-open` - Do not open the browser automatically
+- `-- --poll` - Use polling instead of watching for file changes
 
-## Deployment
+### `npm run build`
 
-Using SSH:
+**Purpose:** Creates an optimized production build with static HTML/CSS/JS files
+**Options:**
 
-```bash
-USE_SSH=true yarn deploy
-```
+- `-- --bundle-analyzer` - Analyze bundle size with interactive treemap
+- `-- --out-dir <dir>` - Specify output directory (default: build)
+- `-- --no-minify` - Build without minifying bundles
+- `-- --dev` - Build in development mode
 
-Not using SSH:
+### `npm run swizzle`
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+**Purpose:** Customize Docusaurus theme components by ejecting them into your project
+**Options:**
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- `-- <theme> <component>` - Specify theme and component to swizzle
+- `-- --eject` - Eject the component for full customization
+- `-- --wrap` - Wrap the component for partial customization
+- `-- --danger` - Allow swizzling of unsafe components
+
+### `npm run deploy`
+
+**Purpose:** Deploys the built site to hosting platform (typically GitHub Pages)
+**Options:**
+
+- `-- --skip-build` - Skip the build step and deploy existing build
+- `-- --out-dir <dir>` - Specify the build output directory
+
+### `npm run clear`
+
+**Purpose:** Clears Docusaurus cache and generated files
+**Options:**
+
+- No additional options available
+
+### `npm run serve`
+
+**Purpose:** Serves the production build locally for testing before deployment
+**Options:**
+
+- `-- --port <port>` - Specify a custom port (default: 3000)
+- `-- --host <host>` - Specify a custom host (default: localhost)
+- `-- --build` - Build the site before serving
+- `-- --no-open` - Do not open the browser automatically
+
+### `npm run write-translations`
+
+**Purpose:** Generates translation files for internationalization (i18n) support
+**Options:**
+
+- `-- --locale <locale>` - Specify the locale to write translations for
+- `-- --override` - Override existing translation files
+- `-- --messagePrefix <prefix>` - Add prefix to translation messages
+
+### `npm run write-heading-ids`
+
+**Purpose:** Automatically adds explicit IDs to headings in markdown files for stable anchor links
+**Options:**
+
+- `-- --maintain-case` - Maintain the case of heading IDs
+- `-- --overwrite` - Overwrite existing heading IDs
+
+### `npm run typecheck`
+
+**Purpose:** Runs TypeScript type checking to catch type errors
+**Options:**
+
+- No additional options (uses TypeScript compiler options from tsconfig.json)

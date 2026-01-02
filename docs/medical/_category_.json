@@ -1,8 +1,0 @@
-{
-  "label": "Medical",
-  "position": 8,
-  "link": {
-    "type": "generated-index",
-    "description": "An array of EMR (Electronic Medical Records) tools for multiple professional disciplines."
-  }
-}

@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'OccuHelp Documentation',
+  title: 'OccuHelp Systems',
   tagline: 'Documentation for OccuHelp',
   favicon: 'img/favicon.ico',
 
@@ -35,13 +35,37 @@ const config: Config = {
     locales: ['en'],
   },
 
+  // SEO: Global head tags for all pages
+  headTags: [
+    // Verify site ownership (add your verification codes here when ready)
+    // {
+    //   tagName: 'meta',
+    //   attributes: {
+    //     name: 'google-site-verification',
+    //     content: 'YOUR_GOOGLE_VERIFICATION_CODE',
+    //   },
+    // },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'keywords',
+        content: 'OccuHelp, workplace safety, occupational health, ergonomics, OSHA recordkeeping, injury tracking, risk analysis, job analysis, workplace wellness, employee safety, MSK rehab, incident management',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'canonical',
+        href: 'https://docs.occuhelp.com',
+      },
+    },
+  ],
+
   presets: [
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-        },
+        docs: false, // Disable default docs
         blog: {
           showReadingTime: true,
           feedOptions: {
@@ -52,32 +76,124 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+          // Show recent posts in sidebar (used by custom BlogSidebar)
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: 'Recent Posts',
         },
         theme: {
           customCss: './src/css/custom.css',
         },
+        // SEO: Sitemap configuration
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
+        // SEO: Google Tag Manager (uncomment and add ID when ready)
+        // gtag: {
+        //   trackingID: 'G-XXXXXXXXXX',
+        //   anonymizeIP: true,
+        // },
       } satisfies Preset.Options,
     ],
   ],
 
+  plugins: [
+    // Custom plugin to expose blog posts to global data
+    './plugins/blog-global-data',
+    // SEO: Structured data (JSON-LD) for search engines
+    './plugins/seo-structured-data',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'general',
+        path: 'docs-general',
+        routeBasePath: 'general',
+        sidebarPath: './sidebars-general.ts',
+        editUrl: 'https://github.com/OccuHelp/docs/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'account',
+        path: 'docs-account',
+        routeBasePath: 'account',
+        sidebarPath: './sidebars-account.ts',
+        editUrl: 'https://github.com/OccuHelp/docs/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'security',
+        path: 'docs-security',
+        routeBasePath: 'security',
+        sidebarPath: './sidebars-security.ts',
+        editUrl: 'https://github.com/OccuHelp/docs/tree/main/',
+      },
+    ],
+  ],
+
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    // SEO: Metadata for all pages (goes in <head>)
+    metadata: [
+      {name: 'description', content: 'Official documentation and help center for OccuHelp - workplace safety, occupational health management, ergonomics, OSHA compliance, injury tracking, and risk analysis software.'},
+      {name: 'og:type', content: 'website'},
+      {name: 'og:site_name', content: 'OccuHelp Documentation'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:site', content: '@occuhelp'},
+      {name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'},
+    ],
+    // Social card image for link previews
+    image: 'img/occuhelp-social-card.png',
     colorMode: {
       respectPrefersColorScheme: true,
+    },
+    // Disable table of contents on blog posts
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 3,
     },
     navbar: {
       title: 'OccuHelp',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'OccuHelp Logo',
         src: 'img/logo.svg',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'generalSidebar',
+          docsPluginId: 'general',
           position: 'left',
-          label: 'Docs',
+          label: 'General',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'accountSidebar',
+          docsPluginId: 'account',
+          position: 'left',
+          label: 'Account',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'securitySidebar',
+          docsPluginId: 'security',
+          position: 'left',
+          label: 'Security',
+        },
+        {
+          to: '/blog',
+          position: 'left',
+          label: 'Blog',
+        },
+        {
+          href: 'https://OccuHelp.com',
+          label: 'Website',
+          position: 'right',
         },
         {
           href: 'https://app.occuhelp.com',
